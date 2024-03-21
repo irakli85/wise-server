@@ -10,7 +10,7 @@ app.use(express.json())
 
 mongoose.connect(process.env.MONGO_URI)
 
-app.get('/getCities', (req, res) => {
+app.get('/api/cities', (req, res) => {
     CityModel.find()
     .then(cities => res.json(cities.at(0)))
     .catch(err => res.json(err))
