@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.get('/api/cities', (req, res) => {
     CityModel.find()
-    .then(cities => res.json(cities.at(0)))
+    .then(cities => res.json(cities.at(0).cities))
     .catch(err => res.json(err))
 })
 
